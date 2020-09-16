@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function Home({ posts }) {
   return (
     <Layout>
-      {posts.map(({ frontmatter: { title, description, date }, slug }) => (
+      {posts.map(({ frontmatter: { title, date }, slug }) => (
         <article key={slug}>
           <header>
             <h3 className="mb-2">
@@ -18,9 +18,6 @@ export default function Home({ posts }) {
             </h3>
             <span className="mb-4 text-xs">{date}</span>
           </header>
-          <section>
-            <p className="mb-8">{description}</p>
-          </section>
         </article>
       ))}
     </Layout>
