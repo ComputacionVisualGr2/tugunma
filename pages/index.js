@@ -5,22 +5,26 @@ import Link from "next/link";
 
 export default function Home({ posts }) {
   return (
-    <Layout>
-      {posts.map(({ frontmatter: { title, date }, slug }) => (
-        <article key={slug}>
-          <header>
-            <h3 className="mb-2">
-              <Link href={"/post/[slug]"} as={`/post/${slug}`}>
-                <a className="text-3xl font-semibold text-orange-600 no-underline">
-                  {title}
-                </a>
-              </Link>
-            </h3>
-            <span className="mb-4 text-xs">{date}</span>
-          </header>
-        </article>
-      ))}
-    </Layout>
+    <view>
+      <Layout>
+        {posts.map(({ frontmatter: { title, date }, slug }) => (
+          <article key={slug}>
+            <header>
+              <h3 className="mb-2">
+                <Link href={"/post/[slug]"} as={`/post/${slug}`}>
+                  <a className="text-3xl font-semibold text-orange-600 no-underline">
+                    {title}
+                  </a>
+                </Link>
+              </h3>
+              <span className="mb-4 text-xs">{date}</span>
+            </header>
+          </article>
+        ))}
+      </Layout>
+      <script src="sketch/p5.min.js" ></script>
+      <script src="sketch/segmentation/sketch.js" ></script>
+    </view>
   );
 }
 
