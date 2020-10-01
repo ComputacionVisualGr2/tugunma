@@ -8,6 +8,7 @@ export default class MyDocument extends Document {
       <html>
         <Head>
           <TypographyStyle typography={typography} />
+          <meta charset="UTF-8" />
         </Head>
         <body>
           <Main />

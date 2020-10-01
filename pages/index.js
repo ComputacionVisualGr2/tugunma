@@ -20,10 +20,12 @@ export default function Home({ posts }) {
               <span className="mb-4 text-xs">{date}</span>
             </header>
           </article>
+          
         ))}
       </Layout>
-      <script src="sketch/p5.min.js" ></script>
-      <script src="sketch/segmentation/sketch.js" ></script>
+      <div>
+        <a href="/Segmentation" className="center"> ejemplo de segmentación</a>
+      </div>
     </view>
   );
 }
