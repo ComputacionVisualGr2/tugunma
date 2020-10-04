@@ -1,6 +1,6 @@
 function preload() {
   // load the original image
-  img = loadImage("gota.jpg"); 
+  img = loadImage("EscalaDeGrises/gota.jpg"); 
 }
 function setup() {
   // create canvas
