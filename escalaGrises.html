@@ -107,16 +107,53 @@
       </div>
       <div>
         <h1>Escala de Grises: Promedio RGB y LUMA</h1>
+
         <h2>Informe</h2>
-        <p class="text1">En el siguiente skecth se puede ver como a partir de un histograma de brillo de la imagen, es posible identificar ciertas secciones importantes en la imagen para luego, mediante una distribución pareja de alguna gama de colores, se segmentan dichas secciones importantes.</p>
-        <p class="text1">Es posible escoger el color con el cual se desea que se pinte y esto se hace partiendo dicho color en tonalidades diferentes de si mismo dependiendo de la cantidad de segmentos importantes que se hayan identificado en la imagen.</p>
-        <p class="text1">Cabe destacar que los brillos en los que secciona son escogidos a partir de derivadas numéricas calculadas obre el histograma. Por supuesto en inicio esto es un poco problemático porque su precisión no e smuy buena, sin embargo, como se ilustra, da buenos resultados. Se crea primero un vector de derivadas en todos los puntos del histograma y luego se escogen las que más se acerquen a ser 0 a manera de secciones críticas.</p>
-        <p class="text1">El algoritmo inicialmente fue aplicado en Processing donde es muchísimo más rápido, además varía en el hecho de que en processing los brillos se calculen de 0 a 255, mientras que en este caso varían de 0 a 100 por lo que los resultados pueden variar ligeramente en ambas implementaciones, sin embargo los resultados son igualmente satisfactorios.</p>
+
+        <p class="text1">Un pixel es la base fundamental (menor unidad) que componen una imágen. 
+          Cada uno de estos está representado por un modelo de color llamado RGB (Red, Gree, Blue 
+          - siglas en inglés), mediante el cual es posible representar un color mediante la mezcla 
+          de los tres colores de luz primarios (RGB).
+        </p>
+
+        <p class="text1">Cuando se tiene una imagen a color, es posible convertirla a escala de grises,
+          es decir, todos sus colores son remplazados por el color negro (en diferentes intencidades) y blanco.
+          Para esto, se utilizan dos metodos escenciales; promedio RGB y LUMA (o método de luminosidad).
+        </p>
+
+        <h3>Promedio RGB</h3>
+
+        <p class="text1">Este método consiste en extraer los valores individuales de cada color del pixel seleccionado. Luego,
+          debido a que estos valores son numéricos (cada uno variando de 0 a 255), es posible realizar un promedio entre estos
+          valores, así;
+        </p>
+
+        <p>promRGB = (rojo + verde + azul)/3</p>
+
+        <p>Por último, es valor numérico del color del pixel es actualizado al nuevo promRGB. El problema acà radica en que cada color
+          primario aporta en igual proporción al color final del pixel. A esta propoción se le llama "luminosidad", y como veremos mas 
+          adelante, cada color primario aporta un nivel de luminosidad diferente, cada uno tiene su propia contribución en la construcción 
+          de una imágen.
+        </p>
+
+        <h3>LUMA o método de luminosidad</h3>
+
+        <p class="text1">Este método resuelve el problema que se tiene con el Promedio RGB, pues cada color primario tiene su propio aporte 
+          en la imagen, con diferentes niveles de luminosidad. De esta forma, el nuevo color de cada pixel esta dado en estas proporciones:
+        </p>
+
+        <p>LUMA = 0.299 * rojo + 0.587 * verde + 0.114 * azul</p>
+        
+        <p>La proporción de luminosidad varía dependiendo al estandar manejado, que a su vez varía dependiendo del proposito con el cual 
+          se construye. (Se escoge el presente para propositos practicos)
+        </p>
       </div>
       <div>
         <h2>Ejemplo Intercativo</h2>
+
       </div>
     </main>
+    <script language="javascript" src="EscalaDeGrises/sketchOriginal.js"></script>
     <script language="javascript" src="EscalaDeGrises/sketch.js"></script>
   </body>
 </html>
