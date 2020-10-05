@@ -37,7 +37,7 @@ const second_sobel = [[-1.5, -3, -1.5],
                       [1.5, 3, 1.5]];
 
 function preload() {
-  img = loadImage('cow.jpg');
+  img = loadImage("Convolution/cow.jpg");
   noLoop();
 }
 
