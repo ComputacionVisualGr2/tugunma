@@ -1,5 +1,6 @@
 let img;
 let matrixsize = 3;
+let val = 0;
 
 const sharping = [ [ -1, -1, -1 ],
                    [ -1,  9, -1 ],
@@ -35,10 +36,6 @@ const second_sobel = [[-1.5, -3, -1.5],
                       [0, 0, 0],
                       [1.5, 3, 1.5]];
 
-
-const names = ["sharping", "second_sharping", "edge_detection", "second_edge_detection", "gaussian_blur", "box_blur", "sobel", "second_sobel"];
-
-
 function preload() {
   img = loadImage('cow.jpg');
   noLoop();
@@ -54,7 +51,25 @@ function draw() {
   loadPixels();
   for (let x = 0; x < img.width; x++) {
     for (let y = 0; y < img.height; y++ ) {
-      let c = convolution(x, y, sharping, matrixsize, img);
+      let c;
+      if(val == 0){
+        c = convolution(x, y, sharping, matrixsize, img);
+      }else if(val == 1){
+        c = convolution(x, y, second_sharping, matrixsize, img);
+      }else if(val == 2){
+        c = convolution(x, y, edge_detection, matrixsize, img);
+      }else if(val == 3){
+        c = convolution(x, y, second_edge_detection, matrixsize, img);
+      }else if(val == 4){
+        c = convolution(x, y, guassian_blur, matrixsize, img);
+      }else if(val == 5){
+        c = convolution(x, y, box_blur, matrixsize, img);
+      }else if(val == 6){
+        c = convolution(x, y, sobel, matrixsize, img);
+      }else{
+        c = convolution(x, y, second_sobel, matrixsize, img);
+      }
+      
       let loc = (x + y*img.width) * 4;
       pixels[loc] = red(c);
       pixels[loc + 1] = green(c);
@@ -63,6 +78,14 @@ function draw() {
     }
   }
   updatePixels();
+}
+
+function mousePressed() {
+  val++;
+  if(val > 7){
+    val = 0;
+  }
+  console.log(val);
 }
 
 function convolution(x, y, matrix, matrixsize, img, gaussian) {
