@@ -251,6 +251,10 @@ section{
 	padding: 3rem 0;
 	position: relative;
 }
+
+body{
+    margin: 0px;
+}
 .wrapper{
 	max-width: 53.33rem;
 	margin: 0 auto;
@@ -282,5 +286,5 @@ section:before{
 
 /* Media queries */
  @media screen and (min-width: 1440px) {
-   section{height:700px}
+   section{height:500px}
  }
