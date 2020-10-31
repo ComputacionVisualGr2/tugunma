@@ -255,6 +255,10 @@ section{
 body{
     margin: 0px;
 }
+
+.main-body{
+    color: #000;
+}
 .wrapper{
 	max-width: 53.33rem;
 	margin: 0 auto;
