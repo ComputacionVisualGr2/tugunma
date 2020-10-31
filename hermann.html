@@ -1,0 +1,126 @@
+<html>
+  <head>
+    <style>
+      body {
+        font-family: "Merriweather", "Georgia", serif;
+        color: hsla(0, 0%, 0%, 0.9);
+      }
+      div{
+        justify-content: center;
+        align-items: center;
+      }
+      h1 {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.78rem;
+        color: inherit;
+        font-family: "Open Sans", sans-serif;
+        font-weight: 900;
+        text-rendering: optimizeLegibility;
+        font-size: 3.00281rem;
+        line-height: 3.56rem;
+        letter-spacing: -1px;
+      }
+      h2 {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.78rem;
+        color: inherit;
+        font-family: "Open Sans", sans-serif;
+        font-weight: 700;
+        text-rendering: optimizeLegibility;
+        font-size: 1.73286rem;
+        line-height: 1.1;
+      }
+      h3 {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.78rem;
+        color: inherit;
+        font-family: "Open Sans", sans-serif;
+        font-weight: 700;
+        text-rendering: optimizeLegibility;
+        font-size: 1.4427rem;
+        line-height: 1.1;
+      }
+      .text1 {
+        font-family: "Open Sans", sans-serif;
+        font-size: 16px;
+        line-height: 1.3;
+        font-style: normal;
+        text-align: justify;
+        min-width:200px;
+        max-width:1200px;
+        margin-top:20px;
+        margin:25px;
+        float:left;
+      }
+      .center {/*para centrar*/
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 62.5%;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <link
+      rel="preload"
+      href="/tugunma/_next/static/css/2cd18a584526017921dd.css"
+      as="style"
+    />
+    <link
+      rel="stylesheet"
+      href="/tugunma/_next/static/css/2cd18a584526017921dd.css"
+      data-n-g=""
+    />
+    <link
+      rel="preload"
+      href="/tugunma/_next/static/css/a66e5613ad89b19a07ab.css"
+      as="style"
+    />
+    <link
+      rel="stylesheet"
+      href="/tugunma/_next/static/css/a66e5613ad89b19a07ab.css"
+      data-n-g=""
+    />
+    <script language="javascript" src="p5.min.js"></script>
+  </head>
+  <body class="center">
+    <main>
+      <div>
+        <a href="index.html" class="font-black leading-none text-black no-underline text-7xl font-display">A la página de inicio</a>
+      </div>
+      <div>
+        <h1>Ilusión de la grilla de Hermann/Scintillating</h1>
+        <h2>Istrucciones</h2>
+        <p class="text1">Recorrer toda la grilla con la mirada con especial énfasis en los cortes entre las líneas de la cuadrícula.</p>
+        <h2>Efecto</h2>
+        <p class="text1">En el caso de la grilla de Hermann, que posee líneas blancas, aparecerán ilusorias manchas grises entre las inersecciones de las líneas. Estos puntos desaparecerán al enfocarse en ellos.</p>
+        <p class="text1">En el caso de la grilla de Scintillating, que posee líneas grises, los puntos en los cuales no se está enfocando la vista deberían tener un efecto centellante cambiando entre luces de blanco y negro. Pero al enfocarse en un punto en particular, se podrá apreciar su color blanco constante.</p>
+        <h2>Explicación</h2>
+        <p class="text1">La grilla de Hermann fue descubierta en 1872 por el fisiólogo Ludimar Hermann mientras que la grilla Scintillating fue descubierta un siglo después por J. R. Bergen (1985).</p>
+        <p class="text1">Los científicos de la visión llaman determinan este tipo de ilusiones como una ilusión de contrastede iluminación simultanea, sin embargo algunos filósofos visuales la determinan como una alucinación ya que no logran determinar si los puntos en las intersecciones se perciben de forma erronea, en tal caso ería una ilusión, o si, esos puntos están siendo alucinados puesto que en realidad no existen.</p>
+        <p class="text1">Se argumenta que en las ilusiones visuales, la ilusión en cuestión en general se produce por un error de percepción o no ver al objeto desde cierta perspectiva, sin embargo, en este caso, los puntos que se perciben directamente no existen por lo que aún se debate si esta es una ilusión o alucinación en realidad.</p>
+      </div>
+      <div>
+        <h2>Haga click en la grilla para cambiar entre ambos tipos de grilla.</h2>
+      </div>
+    </main>
+    <script language="javascript" src="shader_ilusion/grill.js"></script>
+  </body>
+</html>
