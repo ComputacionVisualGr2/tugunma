@@ -30,24 +30,13 @@ html {
     -o-font-feature-settings: "liga", "dlig";
     font-feature-settings: "liga", "dlig";
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  line-height: 1;
-  margin-top: 0;
-  color: #fff;
-	display: inline-block;
-	position: relative;
-}
-p{
+
+/* p{
   margin-top: 4rem;
   color: #fff;
   font-size: 0.9rem;
   line-height: 1
-}
+} */
 .gigantic{font-size: 11rem;}
 .supersize{font-size: 8rem;}
 .tera {
@@ -258,6 +247,7 @@ body{
 
 .main-body{
     color: #000;
+
 }
 .wrapper{
 	max-width: 53.33rem;
@@ -268,6 +258,20 @@ body{
 	top:50%;
 	text-align: center;
 }
+
+.wrapper h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1;
+  margin-top: 0;
+  color: #fff;
+	display: inline-block;
+	position: relative;
+}
+
 .wrapper.large-wrap{max-width: 100%;}
 section:nth-of-type(3n+1){
 	background-size: cover;
