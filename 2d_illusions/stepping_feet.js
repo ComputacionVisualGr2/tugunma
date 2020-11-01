@@ -1,6 +1,7 @@
 var x = 0;
 var xspeed = 1;
 var i = 0
+var bars = true;
 
 function setup() {
     createCanvas(windowWidth, windowHeight)
@@ -21,7 +22,7 @@ function draw() {
     rect(x, 400, 125, 50)
     fill(0, 0, 0)
     rect(x - 25, 600, 125, 50)
-    if (!mouseIsPressed && !keyIsPressed) {
+    if(bars){
         createBars()
     }
 }
@@ -34,3 +35,11 @@ function createBars() {
             rect(i * len, height, len, -height);
     }
 }
+
+function mousePressed() {
+    bars=!bars;
+  }
+  
+  function keyPressed() {
+    bars=!bars;
+  }
