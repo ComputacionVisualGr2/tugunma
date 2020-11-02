@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Segmentacion</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900' rel='stylesheet' type='text/css'>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="js/skel.min.js"></script>
+	<script src="js/skel-panels.min.js"></script>
+	<script src="js/init.js"></script>
+	<noscript>
+		<link rel="stylesheet" href="css/skel-noscript.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/style-desktop.css" />
+	</noscript>
+</head>
+
+<body>
+
+	<!-- Header -->
+	<div id="header">
+		<div id="nav-wrapper">
+			<!-- Nav -->
+			<nav id="nav">
+				<ul>
+					<li><a href="index.html">Inicio</a></li>
+					<li><a href="taller1.html">Taller 1</a></li>
+					<li><a href="taller2.html">Taller 2</a></li>
+				</ul>
+			</nav>
+		</div>
+		<div class="container">
+
+			<!-- Logo -->
+			<div id="logo">
+				<h1><a href="#">Segmentación de imagen</a></h1>
+				<span class="tag">Segmentación de imagenes basada en el histograma</span>
+			</div>
+		</div>
+	</div>
+	<!-- Header -->
+
+	<!-- Main -->
+	<div id="main">
+		<div id="content" class="container">
+			<section>
+				<header>
+					<h2>Tecnica de segmentacion</h2>
+					<span class="byline">Informe</span>
+				</header>
+				<p class="text1">En el siguiente skecth se puede ver como a partir de un histograma de brillo de la
+					imagen, es posible identificar ciertas secciones importantes en la imagen para luego, mediante una
+					distribución pareja de alguna gama de colores, se segmentan dichas secciones importantes.</p>
+				<p class="text1">Es posible escoger el color con el cual se desea que se pinte y esto se hace partiendo
+					dicho color en tonalidades diferentes de si mismo dependiendo de la cantidad de segmentos
+					importantes que se hayan identificado en la imagen.</p>
+				<p class="text1">Cabe destacar que los brillos en los que secciona son escogidos a partir de derivadas
+					numéricas calculadas obre el histograma. Por supuesto en inicio esto es un poco problemático porque
+					su precisión no e smuy buena, sin embargo, como se ilustra, da buenos resultados. Se crea primero un
+					vector de derivadas en todos los puntos del histograma y luego se escogen las que más se acerquen a
+					ser 0 a manera de secciones críticas.</p>
+				<p class="text1">El algoritmo inicialmente fue aplicado en Processing donde es muchísimo más rápido,
+					además varía en el hecho de que en processing los brillos se calculen de 0 a 255, mientras que en
+					este caso varían de 0 a 100 por lo que los resultados pueden variar ligeramente en ambas
+					implementaciones, sin eambargo los resultados son igualmente satisfactorios.</p>
+			</section>
+		</div>
+		<div id="content" class="container">
+			<section>
+				<header>
+					<span class="byline">Ejemplo interactivo</span>
+				</header>
+			</section>
+		</div>
+		<div style="
+            position: relative; 
+            margin-left: 15%;
+            padding-bottom: 25%;
+            height: 0;
+            overflow: hidden;
+        ">
+            <iframe style="
+            position:absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;" src="https://editor.p5js.org/mbsuarezg/embed/6eUIw5dUK" />
+        </div>
+	</div>
+</body>
+</html>
