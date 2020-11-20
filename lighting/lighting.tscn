@@ -1,10 +1,17 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://ground-LightDuff-Closer.tga" type="Texture" id=1]
 [ext_resource path="res://Alien_Necromorph_D.tga" type="Texture" id=2]
 [ext_resource path="res://Alien_Necromorph_N.tga" type="Texture" id=3]
 [ext_resource path="res://Alien_Necromorph.obj" type="ArrayMesh" id=4]
 [ext_resource path="res://CinderblockSloppy0005_1_S.jpg" type="Texture" id=5]
+[ext_resource path="res://0000.BMP" type="Texture" id=6]
+[ext_resource path="res://crown_victoria.obj" type="ArrayMesh" id=7]
+[ext_resource path="res://streetLamp-texture.jpg" type="Texture" id=8]
+[ext_resource path="res://StreetLamp.obj" type="ArrayMesh" id=9]
+[ext_resource path="res://rv_lamp_post_3.obj" type="ArrayMesh" id=10]
+[ext_resource path="res://WoodTexture.png" type="Texture" id=11]
+[ext_resource path="res://Wood.obj" type="ArrayMesh" id=12]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 1 )
@@ -26,6 +33,7 @@ metallic_specular = 0.0
 [sub_resource type="CubeMesh" id=5]
 
 [sub_resource type="ProceduralSky" id=7]
+sky_energy = 0.25
 sun_color = Color( 0.686275, 0.670588, 0.12549, 1 )
 sun_curve = 1.29961
 
@@ -37,6 +45,21 @@ ambient_light_energy = 0.3
 fog_enabled = true
 fog_color = Color( 0.666667, 0.741176, 0.858824, 1 )
 fog_sun_color = Color( 1, 0.901961, 0.701961, 1 )
+fog_depth_begin = 15.0
+fog_depth_curve = 1.1487
+
+[sub_resource type="SpatialMaterial" id=8]
+albedo_texture = ExtResource( 6 )
+metallic = 0.5
+metallic_specular = 0.7
+
+[sub_resource type="SpatialMaterial" id=9]
+albedo_texture = ExtResource( 8 )
+metallic = 0.75
+
+[sub_resource type="SpatialMaterial" id=10]
+albedo_texture = ExtResource( 11 )
+metallic_specular = 0.0
 
 [node name="Spatial" type="Spatial"]
 
@@ -47,10 +70,16 @@ mesh = SubResource( 2 )
 material/0 = null
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 10, 29.7799 )
+transform = Transform( 1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 1.6602, 13.9162, 14.8709 )
 
 [node name="Alien_Necromorph" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0 )
+transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -6.80074, 0.2, -7.67995 )
+material_override = SubResource( 3 )
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="Alien_Necromorph2" type="MeshInstance" parent="."]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -35, 0.2, -30 )
 material_override = SubResource( 3 )
 mesh = ExtResource( 4 )
 material/0 = null
@@ -81,3 +110,231 @@ material/0 = null
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 6 )
+
+[node name="crown_victoria" type="MeshInstance" parent="."]
+transform = Transform( 2.11968, 0, 3.39219, 0, 4, 0, -3.39219, 0, 2.11968, 14, 3, 2 )
+material_override = SubResource( 8 )
+mesh = ExtResource( 7 )
+material/0 = null
+
+[node name="crown_victoria2" type="MeshInstance" parent="."]
+transform = Transform( 3.62523, 0, -1.69047, 0, 4, 0, 1.69047, 0, 3.62523, -5, 3, 30 )
+material_override = SubResource( 8 )
+mesh = ExtResource( 7 )
+material/0 = null
+
+[node name="crown_victoria3" type="MeshInstance" parent="."]
+transform = Transform( -1.36808, 0, 3.75877, 0, 4, 0, -3.75877, 0, -1.36808, 14, 3, -34 )
+material_override = SubResource( 8 )
+mesh = ExtResource( 7 )
+material/0 = null
+
+[node name="StreetLamp1" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, -0.2, -6 )
+material_override = SubResource( 9 )
+mesh = ExtResource( 9 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+
+[node name="SpotLight" type="SpotLight" parent="StreetLamp1"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 7.5, 12.5, 0 )
+light_color = Color( 1, 1, 0.866667, 1 )
+light_energy = 1.25
+shadow_enabled = true
+spot_range = 16.0
+spot_attenuation = 0.0980732
+spot_angle = 35.0
+spot_angle_attenuation = 1.27456
+
+[node name="StreetLamp2" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15, -0.2, 15 )
+material_override = SubResource( 9 )
+mesh = ExtResource( 9 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+
+[node name="SpotLight" type="SpotLight" parent="StreetLamp2"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 7.47575, 12.5315, -0.0204401 )
+light_color = Color( 1, 1, 0.8, 1 )
+light_energy = 1.25
+shadow_enabled = true
+spot_range = 16.0
+spot_attenuation = 0.0980732
+spot_angle = 35.0
+spot_angle_attenuation = 1.27456
+
+[node name="StreetLamp3" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14, -0.2, -38 )
+material_override = SubResource( 9 )
+mesh = ExtResource( 9 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+
+[node name="SpotLight" type="SpotLight" parent="StreetLamp3"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 7.5, 12.5, 0 )
+light_color = Color( 1, 1, 0.866667, 1 )
+light_energy = 1.25
+shadow_enabled = true
+spot_range = 16.0
+spot_attenuation = 0.0980732
+spot_angle = 35.0
+spot_angle_attenuation = 1.27456
+
+[node name="StreetLamp4" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 24, -0.2, 40 )
+material_override = SubResource( 9 )
+mesh = ExtResource( 9 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+
+[node name="SpotLight" type="SpotLight" parent="StreetLamp4"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 7.5, 12.5, 0 )
+light_color = Color( 1, 1, 0.866667, 1 )
+light_energy = 1.25
+shadow_enabled = true
+spot_range = 16.0
+spot_attenuation = 0.0980732
+spot_angle = 35.0
+spot_angle_attenuation = 1.27456
+
+[node name="lamp_post" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -30, 0, 19 )
+mesh = ExtResource( 10 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+
+[node name="OmniLight" type="OmniLight" parent="lamp_post"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 18, 0 )
+omni_range = 15.0
+omni_attenuation = 0.812251
+
+[node name="lamp_post2" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 28, 0, -27 )
+mesh = ExtResource( 10 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+
+[node name="OmniLight" type="OmniLight" parent="lamp_post2"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 18, 0 )
+omni_range = 15.0
+omni_attenuation = 0.812251
+
+[node name="lamp_post3" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -39, 0, -33 )
+mesh = ExtResource( 10 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+
+[node name="OmniLight" type="OmniLight" parent="lamp_post3"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 18, 0 )
+omni_range = 15.0
+omni_attenuation = 0.812251
+
+[node name="lamp_post4" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2, 0, 28 )
+mesh = ExtResource( 10 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+
+[node name="OmniLight" type="OmniLight" parent="lamp_post4"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 18, 0 )
+omni_range = 15.0
+omni_attenuation = 0.812251
+
+[node name="Wood" type="MeshInstance" parent="."]
+transform = Transform( 0.309017, 0, -0.951057, 0, 1, 0, 0.951057, 0, 0.309017, 23, 0.9, -22 )
+material_override = SubResource( 10 )
+mesh = ExtResource( 12 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+material/9 = null
+material/10 = null
+material/11 = null
+material/12 = null
+
+[node name="Wood2" type="MeshInstance" parent="."]
+transform = Transform( 0.906308, 0, 0.422618, 0, 1, 0, -0.422618, 0, 0.906308, 29, 0.9, 30 )
+material_override = SubResource( 10 )
+mesh = ExtResource( 12 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+material/9 = null
+material/10 = null
+material/11 = null
+material/12 = null
+
+[node name="Wood3" type="MeshInstance" parent="."]
+transform = Transform( 0.766044, 0, -0.642788, 0, 1, 0, 0.642788, 0, 0.766044, -33, 0.9, 9 )
+material_override = SubResource( 10 )
+mesh = ExtResource( 12 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+material/9 = null
+material/10 = null
+material/11 = null
+material/12 = null

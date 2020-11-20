@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/crown_victoria.obj-ba82e3c5e36d2df5da0e451de22f9604.mesh"
+
+[deps]
+
+files=[ "res://.import/crown_victoria.obj-ba82e3c5e36d2df5da0e451de22f9604.mesh" ]
+
+source_file="res://crown_victoria.obj"
+dest_files=[ "res://.import/crown_victoria.obj-ba82e3c5e36d2df5da0e451de22f9604.mesh", "res://.import/crown_victoria.obj-ba82e3c5e36d2df5da0e451de22f9604.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true
