@@ -1,17 +1,20 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://ground-LightDuff-Closer.tga" type="Texture" id=1]
-[ext_resource path="res://Alien_Necromorph_D.tga" type="Texture" id=2]
-[ext_resource path="res://Alien_Necromorph_N.tga" type="Texture" id=3]
-[ext_resource path="res://Alien_Necromorph.obj" type="ArrayMesh" id=4]
-[ext_resource path="res://CinderblockSloppy0005_1_S.jpg" type="Texture" id=5]
-[ext_resource path="res://0000.BMP" type="Texture" id=6]
-[ext_resource path="res://crown_victoria.obj" type="ArrayMesh" id=7]
-[ext_resource path="res://streetLamp-texture.jpg" type="Texture" id=8]
-[ext_resource path="res://StreetLamp.obj" type="ArrayMesh" id=9]
-[ext_resource path="res://rv_lamp_post_3.obj" type="ArrayMesh" id=10]
-[ext_resource path="res://WoodTexture.png" type="Texture" id=11]
-[ext_resource path="res://Wood.obj" type="ArrayMesh" id=12]
+[ext_resource path="res://normal.shader" type="Shader" id=2]
+[ext_resource path="res://Alien_Necromorph_D.tga" type="Texture" id=3]
+[ext_resource path="res://Alien_Necromorph_N.tga" type="Texture" id=4]
+[ext_resource path="res://Alien_Necromorph.obj" type="ArrayMesh" id=5]
+[ext_resource path="res://alien.shader" type="Shader" id=6]
+[ext_resource path="res://CinderblockSloppy0005_1_S.jpg" type="Texture" id=7]
+[ext_resource path="res://0000.BMP" type="Texture" id=8]
+[ext_resource path="res://crown_victoria.obj" type="ArrayMesh" id=9]
+[ext_resource path="res://streetLamp-texture.jpg" type="Texture" id=10]
+[ext_resource path="res://StreetLamp.obj" type="ArrayMesh" id=11]
+[ext_resource path="res://rv_lamp_post_3.obj" type="ArrayMesh" id=12]
+[ext_resource path="res://WoodTexture.png" type="Texture" id=13]
+[ext_resource path="res://Wood.obj" type="ArrayMesh" id=14]
+[ext_resource path="res://shinning.shader" type="Shader" id=15]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 1 )
@@ -19,27 +22,93 @@ metallic_specular = 0.0
 
 [sub_resource type="PlaneMesh" id=2]
 
-[sub_resource type="SpatialMaterial" id=3]
-albedo_texture = ExtResource( 2 )
-metallic_specular = 0.0
-normal_enabled = true
-normal_scale = 1.0
-normal_texture = ExtResource( 3 )
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 2 )
+shader_param/albedo = Color( 1, 1, 1, 1 )
+shader_param/specular = 0.2
+shader_param/metallic = 0.0
+shader_param/roughness = 0.75
+shader_param/point_size = 1.0
+shader_param/metallic_texture_channel = Plane( 1, 0, 0, 0 )
+shader_param/roughness_texture_channel = Plane( 1, 0, 0, 0 )
+shader_param/normal_scale = 2.0
+shader_param/uv1_scale = Vector3( 1, 1, 1 )
+shader_param/uv1_offset = Vector3( 0, 0, 0 )
+shader_param/uv2_scale = Vector3( 1, 1, 1 )
+shader_param/uv2_offset = Vector3( 0, 0, 0 )
+shader_param/texture_albedo = ExtResource( 3 )
+shader_param/texture_normal = ExtResource( 4 )
 
-[sub_resource type="SpatialMaterial" id=4]
-albedo_texture = ExtResource( 5 )
-metallic_specular = 0.0
+[sub_resource type="ShaderMaterial" id=4]
+shader = ExtResource( 6 )
+shader_param/albedo = Color( 1, 1, 1, 1 )
+shader_param/specular = 0.0
+shader_param/metallic = 0.0
+shader_param/roughness = 1.0
+shader_param/point_size = 1.0
+shader_param/metallic_texture_channel = Plane( 1, 0, 0, 0 )
+shader_param/roughness_texture_channel = Plane( 1, 0, 0, 0 )
+shader_param/uv1_scale = Vector3( 1, 1, 1 )
+shader_param/uv1_offset = Vector3( 0, 0, 0 )
+shader_param/uv2_scale = Vector3( 1, 1, 1 )
+shader_param/uv2_offset = Vector3( 0, 0, 0 )
+shader_param/texture_albedo = ExtResource( 7 )
 
 [sub_resource type="CubeMesh" id=5]
 
-[sub_resource type="ProceduralSky" id=7]
+[sub_resource type="ShaderMaterial" id=6]
+shader = ExtResource( 6 )
+shader_param/albedo = Color( 1, 1, 1, 1 )
+shader_param/specular = 0.0
+shader_param/metallic = 0.0
+shader_param/roughness = 1.0
+shader_param/point_size = 1.0
+shader_param/metallic_texture_channel = Plane( 1, 0, 0, 0 )
+shader_param/roughness_texture_channel = Plane( 1, 0, 0, 0 )
+shader_param/uv1_scale = Vector3( 1, 1, 1 )
+shader_param/uv1_offset = Vector3( 0, 0, 0 )
+shader_param/uv2_scale = Vector3( 1, 1, 1 )
+shader_param/uv2_offset = Vector3( 0, 0, 0 )
+shader_param/texture_albedo = ExtResource( 7 )
+
+[sub_resource type="ShaderMaterial" id=7]
+shader = ExtResource( 6 )
+shader_param/albedo = Color( 1, 1, 1, 1 )
+shader_param/specular = 0.0
+shader_param/metallic = 0.0
+shader_param/roughness = 1.0
+shader_param/point_size = 1.0
+shader_param/metallic_texture_channel = Plane( 1, 0, 0, 0 )
+shader_param/roughness_texture_channel = Plane( 1, 0, 0, 0 )
+shader_param/uv1_scale = Vector3( 1, 1, 1 )
+shader_param/uv1_offset = Vector3( 0, 0, 0 )
+shader_param/uv2_scale = Vector3( 1, 1, 1 )
+shader_param/uv2_offset = Vector3( 0, 0, 0 )
+shader_param/texture_albedo = ExtResource( 7 )
+
+[sub_resource type="ShaderMaterial" id=8]
+shader = ExtResource( 6 )
+shader_param/albedo = Color( 1, 1, 1, 1 )
+shader_param/specular = 0.0
+shader_param/metallic = 0.0
+shader_param/roughness = 1.0
+shader_param/point_size = 1.0
+shader_param/metallic_texture_channel = Plane( 1, 0, 0, 0 )
+shader_param/roughness_texture_channel = Plane( 1, 0, 0, 0 )
+shader_param/uv1_scale = Vector3( 1, 1, 1 )
+shader_param/uv1_offset = Vector3( 0, 0, 0 )
+shader_param/uv2_scale = Vector3( 1, 1, 1 )
+shader_param/uv2_offset = Vector3( 0, 0, 0 )
+shader_param/texture_albedo = ExtResource( 7 )
+
+[sub_resource type="ProceduralSky" id=9]
 sky_energy = 0.25
 sun_color = Color( 0.686275, 0.670588, 0.12549, 1 )
 sun_curve = 1.29961
 
-[sub_resource type="Environment" id=6]
+[sub_resource type="Environment" id=10]
 background_mode = 2
-background_sky = SubResource( 7 )
+background_sky = SubResource( 9 )
 ambient_light_color = Color( 1, 1, 1, 1 )
 ambient_light_energy = 0.3
 fog_enabled = true
@@ -48,20 +117,119 @@ fog_sun_color = Color( 1, 0.901961, 0.701961, 1 )
 fog_depth_begin = 15.0
 fog_depth_curve = 1.1487
 
-[sub_resource type="SpatialMaterial" id=8]
-albedo_texture = ExtResource( 6 )
-metallic = 0.5
-metallic_specular = 0.7
+[sub_resource type="ShaderMaterial" id=11]
+shader = ExtResource( 6 )
+shader_param/albedo = Color( 1, 1, 1, 1 )
+shader_param/specular = 0.5
+shader_param/metallic = 1.0
+shader_param/roughness = 0.5
+shader_param/point_size = 1.0
+shader_param/metallic_texture_channel = Plane( 1, 0, 0, 0 )
+shader_param/roughness_texture_channel = Plane( 1, 0, 0, 0 )
+shader_param/uv1_scale = Vector3( 1, 1, 1 )
+shader_param/uv1_offset = Vector3( 0, 0, 0 )
+shader_param/uv2_scale = Vector3( 1, 1, 1 )
+shader_param/uv2_offset = Vector3( 0, 0, 0 )
+shader_param/texture_albedo = ExtResource( 8 )
 
-[sub_resource type="SpatialMaterial" id=9]
-albedo_texture = ExtResource( 8 )
+[sub_resource type="ShaderMaterial" id=12]
+shader = ExtResource( 6 )
+shader_param/albedo = Color( 1, 1, 1, 1 )
+shader_param/specular = 0.7
+shader_param/metallic = 1.0
+shader_param/roughness = 0.0
+shader_param/point_size = 1.0
+shader_param/metallic_texture_channel = Plane( 1, 0, 0, 0 )
+shader_param/roughness_texture_channel = Plane( 1, 0, 0, 0 )
+shader_param/uv1_scale = Vector3( 1, 1, 1 )
+shader_param/uv1_offset = Vector3( 0, 0, 0 )
+shader_param/uv2_scale = Vector3( 1, 1, 1 )
+shader_param/uv2_offset = Vector3( 0, 0, 0 )
+shader_param/texture_albedo = ExtResource( 8 )
+
+[sub_resource type="ShaderMaterial" id=13]
+shader = ExtResource( 6 )
+shader_param/albedo = Color( 1, 1, 1, 1 )
+shader_param/specular = 0.7
+shader_param/metallic = 1.0
+shader_param/roughness = 1.0
+shader_param/point_size = 1.0
+shader_param/metallic_texture_channel = Plane( 1, 0, 0, 0 )
+shader_param/roughness_texture_channel = Plane( 1, 0, 0, 0 )
+shader_param/uv1_scale = Vector3( 1, 1, 1 )
+shader_param/uv1_offset = Vector3( 0, 0, 0 )
+shader_param/uv2_scale = Vector3( 1, 1, 1 )
+shader_param/uv2_offset = Vector3( 0, 0, 0 )
+shader_param/texture_albedo = ExtResource( 8 )
+
+[sub_resource type="SpatialMaterial" id=14]
+albedo_texture = ExtResource( 10 )
 metallic = 0.75
 
-[sub_resource type="SpatialMaterial" id=10]
-albedo_texture = ExtResource( 11 )
-metallic_specular = 0.0
+[sub_resource type="ShaderMaterial" id=15]
+shader = ExtResource( 6 )
+shader_param/albedo = Color( 1, 1, 1, 1 )
+shader_param/specular = 0.0
+shader_param/metallic = 0.0
+shader_param/roughness = 0.0
+shader_param/point_size = 1.0
+shader_param/metallic_texture_channel = Plane( 1, 0, 0, 0 )
+shader_param/roughness_texture_channel = Plane( 1, 0, 0, 0 )
+shader_param/uv1_scale = Vector3( 1, 1, 1 )
+shader_param/uv1_offset = Vector3( 0, 0, 0 )
+shader_param/uv2_scale = Vector3( 1, 1, 1 )
+shader_param/uv2_offset = Vector3( 0, 0, 0 )
+shader_param/texture_albedo = ExtResource( 13 )
+
+[sub_resource type="ShaderMaterial" id=16]
+shader = ExtResource( 6 )
+shader_param/albedo = Color( 1, 1, 1, 1 )
+shader_param/specular = 0.0
+shader_param/metallic = 0.0
+shader_param/roughness = 1.0
+shader_param/point_size = 1.0
+shader_param/metallic_texture_channel = Plane( 1, 0, 0, 0 )
+shader_param/roughness_texture_channel = Plane( 1, 0, 0, 0 )
+shader_param/uv1_scale = Vector3( 1, 1, 1 )
+shader_param/uv1_offset = Vector3( 0, 0, 0 )
+shader_param/uv2_scale = Vector3( 1, 1, 1 )
+shader_param/uv2_offset = Vector3( 0, 0, 0 )
+shader_param/texture_albedo = ExtResource( 13 )
+
+[sub_resource type="ShaderMaterial" id=17]
+shader = ExtResource( 6 )
+shader_param/albedo = Color( 1, 1, 1, 1 )
+shader_param/specular = 0.0
+shader_param/metallic = 1.0
+shader_param/roughness = 1.0
+shader_param/point_size = 1.0
+shader_param/metallic_texture_channel = Plane( 1, 0, 0, 0 )
+shader_param/roughness_texture_channel = Plane( 1, 0, 0, 0 )
+shader_param/uv1_scale = Vector3( 1, 1, 1 )
+shader_param/uv1_offset = Vector3( 0, 0, 0 )
+shader_param/uv2_scale = Vector3( 1, 1, 1 )
+shader_param/uv2_offset = Vector3( 0, 0, 0 )
+shader_param/texture_albedo = ExtResource( 13 )
+
+[sub_resource type="ShaderMaterial" id=18]
+shader = ExtResource( 15 )
+shader_param/albedo = Color( 1, 1, 1, 1 )
+shader_param/specular = 0.2
+shader_param/metallic = 0.0
+shader_param/roughness = 0.8
+shader_param/point_size = 1.0
+shader_param/metallic_texture_channel = Plane( 1, 0, 0, 0 )
+shader_param/roughness_texture_channel = Plane( 1, 0, 0, 0 )
+shader_param/normal_scale = 1.5
+shader_param/uv1_scale = Vector3( 1, 1, 1 )
+shader_param/uv1_offset = Vector3( 0, 0, 0 )
+shader_param/uv2_scale = Vector3( 1, 1, 1 )
+shader_param/uv2_offset = Vector3( 0, 0, 0 )
+shader_param/texture_albedo = ExtResource( 3 )
+shader_param/texture_normal = ExtResource( 4 )
 
 [node name="Spatial" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 0.2, -30 )
 
 [node name="Ground" type="MeshInstance" parent="."]
 transform = Transform( 50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0 )
@@ -70,18 +238,12 @@ mesh = SubResource( 2 )
 material/0 = null
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 1.6602, 13.9162, 14.8709 )
+transform = Transform( 0.457575, 0.230134, -0.858873, 0, 0.965926, 0.258819, 0.889171, -0.118429, 0.441984, -22.6015, 13.9162, 2.12791 )
 
 [node name="Alien_Necromorph" type="MeshInstance" parent="."]
-transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -6.80074, 0.2, -7.67995 )
+transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -6, 0.3, -6 )
 material_override = SubResource( 3 )
-mesh = ExtResource( 4 )
-material/0 = null
-
-[node name="Alien_Necromorph2" type="MeshInstance" parent="."]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -35, 0.2, -30 )
-material_override = SubResource( 3 )
-mesh = ExtResource( 4 )
+mesh = ExtResource( 5 )
 material/0 = null
 
 [node name="Wall1" type="MeshInstance" parent="."]
@@ -92,48 +254,48 @@ material/0 = null
 
 [node name="Wall4" type="MeshInstance" parent="."]
 transform = Transform( 50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 5, -100 )
-material_override = SubResource( 4 )
+material_override = SubResource( 6 )
 mesh = SubResource( 5 )
 material/0 = null
 
 [node name="Wall3" type="MeshInstance" parent="."]
 transform = Transform( 50, 0, 0, 0, 50, 0, 0, 0, 50, -100, 5, 0 )
-material_override = SubResource( 4 )
+material_override = SubResource( 7 )
 mesh = SubResource( 5 )
 material/0 = null
 
 [node name="Wall2" type="MeshInstance" parent="."]
 transform = Transform( 50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 5, 100 )
-material_override = SubResource( 4 )
+material_override = SubResource( 8 )
 mesh = SubResource( 5 )
 material/0 = null
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 6 )
+environment = SubResource( 10 )
 
 [node name="crown_victoria" type="MeshInstance" parent="."]
-transform = Transform( 2.11968, 0, 3.39219, 0, 4, 0, -3.39219, 0, 2.11968, 14, 3, 2 )
-material_override = SubResource( 8 )
-mesh = ExtResource( 7 )
+transform = Transform( 2.11968, 0, 3.39219, 0, 4, 0, -3.39219, 0, 2.11968, 14, 3, 4.4 )
+material_override = SubResource( 11 )
+mesh = ExtResource( 9 )
 material/0 = null
 
 [node name="crown_victoria2" type="MeshInstance" parent="."]
 transform = Transform( 3.62523, 0, -1.69047, 0, 4, 0, 1.69047, 0, 3.62523, -5, 3, 30 )
-material_override = SubResource( 8 )
-mesh = ExtResource( 7 )
+material_override = SubResource( 12 )
+mesh = ExtResource( 9 )
 material/0 = null
 
 [node name="crown_victoria3" type="MeshInstance" parent="."]
 transform = Transform( -1.36808, 0, 3.75877, 0, 4, 0, -3.75877, 0, -1.36808, 14, 3, -34 )
-material_override = SubResource( 8 )
-mesh = ExtResource( 7 )
+material_override = SubResource( 13 )
+mesh = ExtResource( 9 )
 material/0 = null
 
 [node name="StreetLamp1" type="MeshInstance" parent="."]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, -0.2, -6 )
-material_override = SubResource( 9 )
-mesh = ExtResource( 9 )
+material_override = SubResource( 14 )
+mesh = ExtResource( 11 )
 material/0 = null
 material/1 = null
 material/2 = null
@@ -143,19 +305,19 @@ material/5 = null
 
 [node name="SpotLight" type="SpotLight" parent="StreetLamp1"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 7.5, 12.5, 0 )
-light_color = Color( 1, 1, 0.866667, 1 )
-light_energy = 1.25
+light_color = Color( 1, 1, 0.666667, 1 )
+light_energy = 1.3
 shadow_enabled = true
-spot_range = 16.0
-spot_attenuation = 0.0980732
-spot_angle = 35.0
-spot_angle_attenuation = 1.27456
+spot_range = 18.0
+spot_attenuation = 0.153893
+spot_angle = 40.0
+spot_angle_attenuation = 2.07051
 
 [node name="StreetLamp2" type="MeshInstance" parent="."]
 editor/display_folded = true
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15, -0.2, 15 )
-material_override = SubResource( 9 )
-mesh = ExtResource( 9 )
+material_override = SubResource( 14 )
+mesh = ExtResource( 11 )
 material/0 = null
 material/1 = null
 material/2 = null
@@ -165,19 +327,18 @@ material/5 = null
 
 [node name="SpotLight" type="SpotLight" parent="StreetLamp2"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 7.47575, 12.5315, -0.0204401 )
-light_color = Color( 1, 1, 0.8, 1 )
-light_energy = 1.25
+light_color = Color( 0.8, 1, 1, 1 )
+light_energy = 1.5
 shadow_enabled = true
-spot_range = 16.0
-spot_attenuation = 0.0980732
-spot_angle = 35.0
-spot_angle_attenuation = 1.27456
+spot_range = 20.0
+spot_attenuation = 0.37893
+spot_angle_attenuation = 1.68179
 
 [node name="StreetLamp3" type="MeshInstance" parent="."]
 editor/display_folded = true
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14, -0.2, -38 )
-material_override = SubResource( 9 )
-mesh = ExtResource( 9 )
+material_override = SubResource( 14 )
+mesh = ExtResource( 11 )
 material/0 = null
 material/1 = null
 material/2 = null
@@ -187,19 +348,18 @@ material/5 = null
 
 [node name="SpotLight" type="SpotLight" parent="StreetLamp3"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 7.5, 12.5, 0 )
-light_color = Color( 1, 1, 0.866667, 1 )
-light_energy = 1.25
+light_energy = 3.0
 shadow_enabled = true
-spot_range = 16.0
-spot_attenuation = 0.0980732
-spot_angle = 35.0
-spot_angle_attenuation = 1.27456
+spot_range = 20.0
+spot_attenuation = 0.297302
+spot_angle = 50.0
+spot_angle_attenuation = 0.999999
 
 [node name="StreetLamp4" type="MeshInstance" parent="."]
 editor/display_folded = true
 transform = Transform( 0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 24, -0.2, 40 )
-material_override = SubResource( 9 )
-mesh = ExtResource( 9 )
+material_override = SubResource( 14 )
+mesh = ExtResource( 11 )
 material/0 = null
 material/1 = null
 material/2 = null
@@ -209,18 +369,18 @@ material/5 = null
 
 [node name="SpotLight" type="SpotLight" parent="StreetLamp4"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 7.5, 12.5, 0 )
-light_color = Color( 1, 1, 0.866667, 1 )
-light_energy = 1.25
+light_color = Color( 1, 0.866667, 1, 1 )
+light_energy = 1.75
 shadow_enabled = true
 spot_range = 16.0
 spot_attenuation = 0.0980732
 spot_angle = 35.0
 spot_angle_attenuation = 1.27456
 
-[node name="lamp_post" type="MeshInstance" parent="."]
+[node name="lamp_post1" type="MeshInstance" parent="."]
 editor/display_folded = true
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -30, 0, 19 )
-mesh = ExtResource( 10 )
+mesh = ExtResource( 12 )
 material/0 = null
 material/1 = null
 material/2 = null
@@ -229,15 +389,16 @@ material/4 = null
 material/5 = null
 material/6 = null
 
-[node name="OmniLight" type="OmniLight" parent="lamp_post"]
+[node name="OmniLight" type="OmniLight" parent="lamp_post1"]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 18, 0 )
-omni_range = 15.0
-omni_attenuation = 0.812251
+light_color = Color( 0.8, 0.8, 0.8, 1 )
+omni_range = 23.0
+omni_attenuation = 0.297302
 
 [node name="lamp_post2" type="MeshInstance" parent="."]
 editor/display_folded = true
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 28, 0, -27 )
-mesh = ExtResource( 10 )
+mesh = ExtResource( 12 )
 material/0 = null
 material/1 = null
 material/2 = null
@@ -248,13 +409,13 @@ material/6 = null
 
 [node name="OmniLight" type="OmniLight" parent="lamp_post2"]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 18, 0 )
-omni_range = 15.0
-omni_attenuation = 0.812251
+light_energy = 1.6
+omni_range = 17.0
+omni_attenuation = 1.31951
 
 [node name="lamp_post3" type="MeshInstance" parent="."]
-editor/display_folded = true
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -39, 0, -33 )
-mesh = ExtResource( 10 )
+mesh = ExtResource( 12 )
 material/0 = null
 material/1 = null
 material/2 = null
@@ -265,13 +426,14 @@ material/6 = null
 
 [node name="OmniLight" type="OmniLight" parent="lamp_post3"]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 18, 0 )
-omni_range = 15.0
-omni_attenuation = 0.812251
+light_color = Color( 0.666667, 1, 1, 1 )
+light_energy = 1.6
+omni_range = 18.0
+omni_attenuation = 0.482967
 
 [node name="lamp_post4" type="MeshInstance" parent="."]
-editor/display_folded = true
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2, 0, 28 )
-mesh = ExtResource( 10 )
+mesh = ExtResource( 12 )
 material/0 = null
 material/1 = null
 material/2 = null
@@ -282,13 +444,15 @@ material/6 = null
 
 [node name="OmniLight" type="OmniLight" parent="lamp_post4"]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 18, 0 )
-omni_range = 15.0
-omni_attenuation = 0.812251
+light_color = Color( 0.8, 1, 0.8, 1 )
+light_energy = 1.3
+omni_range = 18.0
+omni_attenuation = 0.637279
 
 [node name="Wood" type="MeshInstance" parent="."]
 transform = Transform( 0.309017, 0, -0.951057, 0, 1, 0, 0.951057, 0, 0.309017, 23, 0.9, -22 )
-material_override = SubResource( 10 )
-mesh = ExtResource( 12 )
+material_override = SubResource( 15 )
+mesh = ExtResource( 14 )
 material/0 = null
 material/1 = null
 material/2 = null
@@ -305,8 +469,8 @@ material/12 = null
 
 [node name="Wood2" type="MeshInstance" parent="."]
 transform = Transform( 0.906308, 0, 0.422618, 0, 1, 0, -0.422618, 0, 0.906308, 29, 0.9, 30 )
-material_override = SubResource( 10 )
-mesh = ExtResource( 12 )
+material_override = SubResource( 16 )
+mesh = ExtResource( 14 )
 material/0 = null
 material/1 = null
 material/2 = null
@@ -323,8 +487,8 @@ material/12 = null
 
 [node name="Wood3" type="MeshInstance" parent="."]
 transform = Transform( 0.766044, 0, -0.642788, 0, 1, 0, 0.642788, 0, 0.766044, -33, 0.9, 9 )
-material_override = SubResource( 10 )
-mesh = ExtResource( 12 )
+material_override = SubResource( 17 )
+mesh = ExtResource( 14 )
 material/0 = null
 material/1 = null
 material/2 = null
@@ -338,3 +502,9 @@ material/9 = null
 material/10 = null
 material/11 = null
 material/12 = null
+
+[node name="Alien_Necromorph2" type="MeshInstance" parent="."]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -35, 0.2, -30 )
+material_override = SubResource( 18 )
+mesh = ExtResource( 5 )
+material/0 = null
