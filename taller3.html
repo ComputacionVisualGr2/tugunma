@@ -106,7 +106,8 @@
                                 la luz es una función inversa, lo que significa que las luces omnidireccionales no
                                 tienen radio. Esto es un problema porque calcular un gran número de este tipo de luces
                                 se volvería costoso.
-                                <a href="https://docs.godotengine.org/es/stable/tutorials/3d/lights_and_shadows.html">[Godot lighting]</a>
+                                <a href="https://docs.godotengine.org/es/stable/tutorials/3d/lights_and_shadows.html">[Godot
+                                    lighting]</a>
                             </p>
                             <p>
                                 Para dar solución a este problema se introduce una fuente de luz que posee un rango
@@ -116,7 +117,13 @@
                             <li style="font-weight: 500; font-size:15px">Combinación de diferentes modelos de luz por
                                 medio del vertex shader y el pixel shader</li>
                             <p>
-                                text
+                                Los modelos previamente descritos pueden ser usados o aplicados en una misma escena.
+                                En nuestra escena se puede apreciar la combinación de todos estos modelos de iluminación
+                                sobretodo sobre el objeto centrla de la animación (un alien), sin embargo, estos modelos
+                                de iluminación se pueden apreciar de forma individual de manera más clara si se ven
+                                otros objetos como los carros o robles que hay alrededor, esto debido a que poseen una
+                                textura diferente a la del alien y a que estan alojados en diferentes puntos respecto a
+                                las fuentes de luz o a la intensidad de la neblina por ejemplo.
                             </p>
                             <li style="font-weight: 500; font-size:15px">Warn lights, normal mapping y shadow mapping
                             </li>
@@ -127,6 +134,15 @@
                         <br />
                         <header>
                             <h2>Discusión</h2>
+                            <p>
+                                El modelar la luz en el mundo de la computación es un tema de suma importancia en la
+                                actualidad, debido a su alta aplicabilidad sobretodo en el modelado 3D, en videojuegos y
+                                en rendering. Es por ello que es de suma importancia que indagemos no solo como esta se
+                                puede modelar, sino que también nos interesemos en saber como se puede hacer esto de
+                                forma eficiente, porque, como es de esperar, el tratar de imitar estos tipos de iluminación y
+                                modelarlos en un entorno computacional conlleva una gran carga sobre cualquier
+                                dispositivo que corra alguna de estas escenas.
+                            </p>
                         </header>
 
                         <body>
