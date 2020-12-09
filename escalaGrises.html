@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Escala de grises</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900' rel='stylesheet' type='text/css'>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/skel.min.js"></script>
+    <script src="js/skel-panels.min.js"></script>
+    <script src="js/init.js"></script>
+    <noscript>
+        <link rel="stylesheet" href="css/skel-noscript.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/style-desktop.css" />
+    </noscript>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <div id="header">
+        <div id="nav-wrapper">
+            <!-- Nav -->
+            <nav id="nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="taller1.html">Taller 1</a></li>
+                    <li><a href="taller2.html">Taller 2</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="container">
+
+            <!-- Logo -->
+            <div id="logo">
+                <h1><a href="#">Escala de grises</a></h1>
+                <span class="tag">Promedio RGB y luma</span>
+            </div>
+        </div>
+    </div>
+    <!-- Header -->
+
+    <!-- Main -->
+    <div id="main">
+        <div id="content" class="container">
+            <section>
+                <header>
+                    <h2>Escala de grises</h2>
+                    <span class="byline">Informe</span>
+                </header>
+                <p>Un pixel es la base fundamental (menor unidad) que componen una imágen.
+                    Cada uno de estos está representado por un modelo de color llamado RGB (Red, Gree, Blue
+                    - siglas en inglés), mediante el cual es posible representar un color mediante la mezcla
+                    de los tres colores de luz primarios (RGB).
+                </p>
+                <p>Cuando se tiene una imagen a color, es posible convertirla a escala de grises,
+                    es decir, todos sus colores son remplazados por el color negro (en diferentes intencidades) y
+                    blanco.
+                    Para esto, se utilizan dos metodos escenciales; promedio RGB y LUMA (o método de luminosidad).
+                </p>
+            </section>
+        </div>
+        <div id="content" class="container">
+            <section>
+                <header>
+                    <span class="byline">Promedio RGB</span>
+                    <p>Este método consiste en extraer los valores individuales de cada color del pixel seleccionado.
+                        Luego,
+                        debido a que estos valores son numéricos (cada uno variando de 0 a 255), es posible realizar un
+                        promedio entre estos
+                        valores, así;
+                    </p>
+
+                    <p>promRGB = (rojo + verde + azul)/3</p>
+
+                    <p>Por último, es valor numérico del color del pixel es actualizado al nuevo promRGB. El problema
+                        acà radica en que cada color
+                        primario aporta en igual proporción al color final del pixel. A esta propoción se le llama
+                        "luminosidad", y como veremos mas
+                        adelante, cada color primario aporta un nivel de luminosidad diferente, cada uno tiene su propia
+                        contribución en la construcción
+                        de una imágen.
+                    </p>todos estos valores siempre será igual a 1.
+                    </p>
+                </header>
+            </section>
+        </div>
+        <div id="content" class="container">
+            <section>
+                <header>
+                    <span class="byline">LUMA o método de luminosidad</span>
+                    <p>Este método resuelve el problema que se tiene con el Promedio RGB, pues cada color primario tiene
+                        su propio aporte
+                        en la imagen, con diferentes niveles de luminosidad. De esta forma, el nuevo color de cada pixel
+                        esta dado en estas proporciones:
+                    </p>
+
+                    <p>LUMA = 0.299 * rojo + 0.587 * verde + 0.114 * azul</p>
+
+                    <p>La proporción de luminosidad varía dependiendo al estandar manejado, que a su vez varía
+                        dependiendo del proposito con el cual
+                        se construye. (Se escoge el presente para propositos practicos)
+                    </p>
+                </header>
+            </section>
+        </div>
+        <div id="content" class="container">
+            <section>
+                <header>
+                    <span class="byline">Video</span>
+                    <p>Para el análisis se utilizó un video de 854 pixeles X 480 pixeles.</p>
+                    <p>Para cada píxel de cada frame se hace la transformación correspondiente sea por promedioRGB o
+                        LUMA como se describió anteriormente. </p>
+                    <p>Se usa en Processing 3 en una maquina con I5 4690K sin overclock y tarjeta gráfica AMD Rx 480. En
+                        este equipo se mantiene un constante frameRate de 60.</p>
+                </header>
+            </section>
+        </div>
+        <div id="content" class="container">
+            <section>
+                <header>
+                    <span class="byline">Video</span>
+                </header>
+            </section>
+        </div>
+        <div id="content" class="container">
+            <video width="480" controls autoplay>
+                <source src="videoPromedio.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div id="content" class="container">
+            <section>
+                <header>
+                    <span class="byline">Ejemplo</span>
+                </header>
+            </section>
+        </div>
+        <div style="
+            position: relative; 
+            margin-left: 15%;
+            padding-bottom: 25%;
+            height: 0;
+            overflow: hidden;
+        ">
+            <iframe style="
+            position:absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;" src="https://editor.p5js.org/mbsuarezg/embed/Oa7-Xv29OB" />
+        </div>
+    </div>
+</body>
+
+</html>

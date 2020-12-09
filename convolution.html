@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Máscaras de convolución</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900' rel='stylesheet' type='text/css'>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/skel.min.js"></script>
+    <script src="js/skel-panels.min.js"></script>
+    <script src="js/init.js"></script>
+    <noscript>
+        <link rel="stylesheet" href="css/skel-noscript.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/style-desktop.css" />
+    </noscript>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <div id="header">
+        <div id="nav-wrapper">
+            <!-- Nav -->
+            <nav id="nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="taller1.html">Taller 1</a></li>
+                    <li><a href="taller2.html">Taller 2</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="container">
+
+            <!-- Logo -->
+            <div id="logo">
+                <h1><a href="#">Máscaras de convolución</a></h1>
+            </div>
+        </div>
+    </div>
+    <!-- Header -->
+
+    <!-- Main -->
+    <div id="main">
+        <div id="content" class="container">
+            <section>
+                <header>
+                    <h2>Máscaras de convolución</h2>
+                    <span class="byline">Informe</span>
+                </header>
+                <p>Es evidente que durante los últimos años, el área de procesamiento de imágenes se ha visto
+                    involucrada como una herramienta escencial en diferentes áreas del conocimiento.
+                    La importancia del procesamiento de imágenes se ha visto realzada junto al desarrollo tecnológico de
+                    los diferentes dispositivos tanto de hardware como de software, ya que
+                    se aumenta la capacidad computacional y con ello la eficiencia de los algoritmos para el
+                    procesamiento de imágenes. Sin embargo, es frecuente que los usuarios que hacen uso
+                    de dichos algoritmos para el procesamiento de imagenes desconozcan el funcionamiento interno del
+                    algoritmo y aún más la complejidad que este puede llegar a tener. Por ello,
+                    a continuación se dará una breve explicación sobre el proceso de convolución en una imágen.
+                </p>
+            </section>
+        </div>
+        <div id="content" class="container">
+            <section>
+                <header>
+                    <span class="byline">El proceso de convolución</span>
+                    <p>La convolución de una imagén se puede definir como un proceso matemático que se realiza sobre los
+                        pixeles de dicha imágen, con el fin de resaltar ciertos tipos de relaciones. Y para esto
+                        usamos las máscaras de convolución, las cuales se pueden describir como una grilla o matriz con
+                        diferentes valores dados según el tipo de relación espacial que se quiere resaltar.
+                        Para aplicar la relación que se desea buscar debemos desplazar esta máscara de convolución en
+                        cada uno de los pixeles de la imágen, de tal modo que cada pixel de la imágen original es
+                        transformado
+                        de acuerdo a los valores que rodean el pixel actual y su transformación con la máscara de
+                        convolución
+                    </p>
+                    <p>El ejemplo más básico de una máscara de convolución es el de una matriz con la cual se busca
+                        realizar el efecto borroso de una imágen, para esto, cada pixel de la imágen original será
+                        transformado de acuerdo al promedio aritmético de los colores de los pixeles que lo rodean, lo
+                        que significa, que cada valor en la máscara de convolución será equivalente, y que, la suma
+                        de todos estos valores siempre será igual a 1.
+                    </p>
+                </header>
+                <p>Es evidente que durante los últimos años, el área de procesamiento de imágenes se ha visto
+                    involucrada como una herramienta escencial en diferentes áreas del conocimiento.
+                    La importancia del procesamiento de imágenes se ha visto realzada junto al desarrollo tecnológico de
+                    los diferentes dispositivos tanto de hardware como de software, ya que
+                    se aumenta la capacidad computacional y con ello la eficiencia de los algoritmos para el
+                    procesamiento de imágenes. Sin embargo, es frecuente que los usuarios que hacen uso
+                    de dichos algoritmos para el procesamiento de imagenes desconozcan el funcionamiento interno del
+                    algoritmo y aún más la complejidad que este puede llegar a tener. Por ello,
+                    a continuación se dará una breve explicación sobre el proceso de convolución en una imágen.
+                </p>
+            </section>
+        </div>
+        <div id="content" class="container">
+            <section>
+                <header>
+                    <span class="byline">Descripción de las máscaras</span>
+                    <p>En nuestro caso usaremos diferentes máscaras de convolución, tales como máscaras para resaltar
+                        los bordes de una imágen, crear un efecto borroso en las mismas o modificar los colores de
+                        acuerdo a los
+                        bordes presentes en la imágen.
+                    </p>
+                </header>
+            </section>
+        </div>
+        <div id="content" class="container">
+            <section>
+                <header>
+                    <span class="byline">Ejemplo interactivo</span>
+                </header>
+            </section>
+        </div>
+        <div style="
+            position: relative; 
+            margin-left: 15%;
+            padding-bottom: 25%;
+            height: 0;
+            overflow: hidden;
+        ">
+            <iframe style="
+            position:absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;" src="https://editor.p5js.org/mbsuarezg/embed/LMeBYaf79" />
+        </div>
+    </div>
+</body>
+
+</html>
