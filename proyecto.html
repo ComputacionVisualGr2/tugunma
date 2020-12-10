@@ -29,8 +29,8 @@
 					<li><a href="index.html">Inicio</a></li>
 					<li><a href="taller1.html">Taller 1</a></li>
 					<li><a href="taller2.html">Taller 2</a></li>
-                    <li><a href="taller3.html">Taller 3</a></li>
-                    <li class="active"><a href="proyecto.html">Proyecto</a></li>
+					<li><a href="taller3.html">Taller 3</a></li>
+					<li class="active"><a href="proyecto.html">Proyecto</a></li>
 				</ul>
 			</nav>
 		</div>
@@ -59,12 +59,18 @@
 						<div class="row">
 							<section style="margin-left:0%">
 								<ul class="default">
-									<li><a href="https://es.wikipedia.org/wiki/Vulkan" target="_blank">Vulkan | Wikipedia</a></li>
-									<li><a href="https://www.amd.com/es/technologies/vulkant" target="_blank">Vulkan | AMD</a></li>
-									<li><a href="https://community.amd.com/t5/blogs/radeon-gpus-are-ready-for-the-vulkan-graphics-api/ba-p/415008" target="_blank">Vulkan applications | AMD</a></li>
-									<li><a href="https://www.khronos.org/vulkan/" target="_blank">Vulkan | Página oficial</a></li>
-									<li><a href="https://learnopengl.com/Advanced-Lighting/Shadows/Shadow-Mapping" target="_blank">LearnOpenGL | Shadow Mapping</a></li>
-									<li><a href="http://www.opengl-tutorial.org/es/intermediate-tutorials/tutorial-16-shadow-mapping/" target="_blank">OpenGL-Tutorial | Shadow Mapping</a></li>
+									<li><a href="https://es.wikipedia.org/wiki/Vulkan" target="_blank">Vulkan |
+											Wikipedia</a></li>
+									<li><a href="https://www.amd.com/es/technologies/vulkant" target="_blank">Vulkan |
+											AMD</a></li>
+									<li><a href="https://community.amd.com/t5/blogs/radeon-gpus-are-ready-for-the-vulkan-graphics-api/ba-p/415008"
+											target="_blank">Vulkan applications | AMD</a></li>
+									<li><a href="https://www.khronos.org/vulkan/" target="_blank">Vulkan | Página
+											oficial</a></li>
+									<li><a href="https://learnopengl.com/Advanced-Lighting/Shadows/Shadow-Mapping"
+											target="_blank">LearnOpenGL | Shadow Mapping</a></li>
+									<li><a href="http://www.opengl-tutorial.org/es/intermediate-tutorials/tutorial-16-shadow-mapping/"
+											target="_blank">OpenGL-Tutorial | Shadow Mapping</a></li>
 								</ul>
 							</section>
 						</div>
@@ -78,9 +84,11 @@
 							<h2>Objetivo</h2>
 						</header>
 						<p>
-							Indagar más a profundidad sobre los modelos de iluminación y el mapeo de texturas usando la API
-							de Vulkan como herramienta para su implementación puesto que representa una tecnología novedosa
-							de alto desempeño que brinda opciones más elaboradas para la manipulación de hardware por parte
+							Indagar a profundidad sobre los modelos de iluminación y el mapeo de texturas usando la API
+							de Vulkan como herramienta para su implementación puesto que representa una tecnología
+							novedosa
+							de alto desempeño que brinda opciones más elaboradas para la manipulación de hardware por
+							parte
 							de los desarrollaodres.
 						</p>
 						<br />
@@ -88,26 +96,31 @@
 							<h2>Vulkan</h2>
 						</header>
 						<p>
-							Vulkan es una API de gráficos (tanto 2D como 3D) de nueva generación que provee alta eficiencia
+							Vulkan es una API de gráficos (tanto 2D como 3D) de nueva generación que provee alta
+							eficiencia
 							y desempeño, da acceso multiplataforma a las GPUs modernas usadas en una gran variedad de
-							equipos desde PCs y consolas hasta teléfonos móviles y plataformas embebidas. 
+							equipos desde PCs y consolas hasta teléfonos móviles y plataformas embebidas.
 						</p>
 						<p>
 							Su principal ventaja es dar la posibilidad de manipular el hardware de forma más profunda.
 							A comparación de OpenGL, reduce el "API overhead" que es el trabajo que hace la CPU
 							interpretando la GPU; esto proporciona al hardware menos sobrecarga y más tiempo para gastar
-							en otros procesos importante que ayudan a su desempeño. Además es posible manipular la GPU de
-							formas que no son posibles en OpenGL. Adicionalmente, proporciona un gran soporta
-							multiplataforma desde móvil hasta PC y consolas.
+							en otros procesos importante que ayudan a su desempeño. Además es posible manipular la GPU
+							de
+							formas que no son posibles en OpenGL.
 						</p>
 
 						<p>
-							Fue anunciada por primera vez en la GDC de 2015 por el grupo Khronos, los desarrolladores de OpenGL. Inicialmente, como "la iniciativa OpenGL de próxima generación".
+							Fue anunciada por primera vez en la GDC de 2015 por el grupo Khronos, los desarrolladores de
+							OpenGL. Inicialmente, como "la iniciativa OpenGL de próxima generación".
 						</p>
-						<p>Gracias a Vulkan, ahora es posible ejecutar varios procesos como cálculos de geometría 3D junto
-							con procesos de trabajo computacional directamente, esto se conoce como computación asíncrona.
+						<p>Gracias a Vulkan, ahora es posible ejecutar varios procesos como cálculos de geometría 3D
+							junto
+							con procesos de trabajo computacional directamente, esto se conoce como computación
+							asíncrona.
 							Antes esto solo era posible mediante GPUs Radeon con arquitectura GNC, pero ahora mediante
-							Vulkan se pueden hacer este tipo de cosas en diversas plataformas sin necesidad de usar Radeon
+							Vulkan se pueden hacer este tipo de cosas en diversas plataformas sin necesidad de usar
+							Radeon
 							y mejorando considerablemente el framerate.</p>
 						<br />
 						<header>
@@ -115,63 +128,82 @@
 						</header>
 						<p>
 							Las sombras son el resultado de la ausenncia de la luz debido a la oclución. Cuando los
-							rayos de luz de la fuente De iluminación no tocan un objeto X porque éste está ocluido por 
-							otro objeto Y, el objeto X está en las sombras. Pero, ¿cómo nos acercamos a esto en computaciónvisual?
+							rayos de luz de la fuente De iluminación no tocan un objeto X porque éste está ocluido por
+							otro objeto Y, el objeto X está en las sombras. Pero, ¿cómo nos acercamos a esto en
+							computaciónvisual?
 							En el intento por responder está pregunta se encuentra el Shadow Mapping.
 						</p>
 						<p>
-							Shadow Mapping es una técnica de iluminación que trabaja con la distancia existente entre la fuente de luz
-							y los objetos que irradia. La idea detras de Shadow Mapping es simple: se renderiza la escena desde el punto
-							de vista de la luz; todo lo que se ve desde esta perspectica está iluminado y aquello que no se ve, no lo está
-							(está en las sombras). Para esto, se compara el punto donde el rayo de luz primero toca un objeto (punto más 
-							cercano a la fuente de luz) con otros puntos en este rayo. Si luego de la comparación la posición del rayo en el
-							punto de estudio está más alejado que la posición del rayo en el punto más cercano, el punto de estudio debe 
-							estar en las sombras. Pero iterar y recorrer todos los posibles puntos con los muchos rayos de luz es ineficiente.
-							Es acá donde entre en juego el Shadow Map. 
+							Shadow Mapping es una técnica de iluminación que trabaja con la distancia existente entre la
+							fuente de luz
+							y los objetos que irradia. La idea detras de Shadow Mapping es simple: se renderiza la
+							escena desde el punto
+							de vista de la luz; todo lo que se ve desde esta perspectica está iluminado y aquello que no
+							se ve, no lo está
+							(está en las sombras). Para esto, se compara el punto donde el rayo de luz primero toca un
+							objeto (punto más
+							cercano a la fuente de luz) con otros puntos en este rayo. Si luego de la comparación la
+							posición del rayo en el
+							punto de estudio está más alejado que la posición del rayo en el punto más cercano, el punto
+							de estudio debe
+							estar en las sombras. Pero iterar y recorrer todos los posibles puntos con los muchos rayos
+							de luz es ineficiente.
+							Es acá donde entre en juego el Shadow Map.
 						</p>
-						<img src="shadow.JPG" width="700"/>
+						<img src="shadow.JPG" width="700" />
 						<p>
-							Las lineas azules representan los fragmentos donde la luz se puede ver. Las lineas negras, aquellos que están en las
+							Las lineas azules representan los fragmentos donde la luz se puede ver. Las lineas negras,
+							aquellos que están en las
 							sombras.
 						</p>
 						<p>
-							El Shadow Map (también llamado Depth Map), es una textura que guarda todos los valores de profundidad (que van desde 0 hasta 1, siendo 1 el mas lejano),
-							obtenidos al renderizar la escena desde el punto de vista de la luz. Con esto, se puede calcular si un fracmento está 
+							El Shadow Map (también llamado Depth Map), es una textura que guarda todos los valores de
+							profundidad (que van desde 0 hasta 1, siendo 1 el mas lejano),
+							obtenidos al renderizar la escena desde el punto de vista de la luz. Con esto, se puede
+							calcular si un fracmento está
 							en las sombras o no.
 						</p>
-						<img src="shadowmap.JPG" width="700"/>
+						<img src="shadowmap.JPG" width="700" />
 						<p>Ilustración del Shadow Map, y cómo se diferencian las sombras</p>
 						<p>
 							Se puede decir, entonces, que el Shadow Mapping consiste de dos pasos:
-							<ol>
-								<li>Primero, se renderiza el shadow map. Debido a que este solo contiene datos de profundidad de baja precisión 
-									(dejando a un lado el color), el tiempo de renderizado es 2 veces mayor que el de un renderizado normal.</li>
-								<li>Luego, se renderiza la escena normalmente y se usa el shadow map generado para calcular los fragmentos que están en
-									 las sombras.</li>
-							</ol>
+						<ol>
+							<li>Primero, se renderiza el shadow map. Debido a que este solo contiene datos de
+								profundidad de baja precisión
+								(dejando a un lado el color), el tiempo de renderizado es 2 veces mayor que el de un
+								renderizado normal.</li>
+							<li>Luego, se renderiza la escena normalmente y se usa el shadow map generado para calcular
+								los fragmentos que están en
+								las sombras.</li>
+						</ol>
 						</p><br>
 						<h3>Ejemplo</h3>
-						<img src="ejemploShadow.jpeg" width="700"/>
+						<img src="ejemploShadow.jpeg" width="700" />
 						<br>
-						
+
 						</br>
 						<header>
 							<h2>Iluminación Phong</h2>
 						</header>
 						<p>
-							El modelo de iluminación Phong, o modelo de reflexión Phong, o simplemente Phong Lighting es 
-							un modelo empírico de iluminación local de puntos sobre una superficie (1973). Este describe el 
-							comportamiento de la reflexión de la luz sobre una superficie expresada como una combinación de 
-							un término ambiental, término difuso (reflexión difusa) y un término especular (reflexión especular).
-						</p>	
+							El modelo de iluminación Phong, o modelo de reflexión Phong, o simplemente Phong Lighting es
+							un modelo empírico de iluminación local de puntos sobre una superficie (1973). Este describe
+							el
+							comportamiento de la reflexión de la luz sobre una superficie expresada como una combinación
+							de
+							un término ambiental, término difuso (reflexión difusa) y un término especular (reflexión
+							especular).
+						</p>
 						<img src="ecuacionIluminacion.PNG">
 						<p> Ecuación Iluminacion Phong </p><br>
 						<img src="phong.PNG">
 						<p> Iluminacion Phong </p><br>
-						<p> Para el ejemplo como podemos ver es una imagen bastante opaca y lo es porque se realiza un proceso de desaturación del color por el cual se le asignara a la luz.</p>
+						<p> Para el ejemplo como podemos ver es una imagen bastante opaca y lo es porque se realiza un
+							proceso de desaturación del color por el cual se le asignara a la luz.</p>
 						<img src="Phong_malla.PNG" width=700>
 						<p> Iluminacion Phong a la izquierda, malla de la textura a la derecha</p><br>
-						<p> Se aumenta el color de la luz ambiental respecto a la luz difusa y espectacular porque la malla de la textura que se esta usando es muy oscura. </p>
+						<p> Se aumenta el color de la luz ambiental respecto a la luz difusa y espectacular porque la
+							malla de la textura que se esta usando es muy oscura. </p>
 						<img src="codigoPhong.PNG">
 						<p> Codigo para la iluminación Phong </p><br>
 						<br />
@@ -186,15 +218,19 @@
 							En este caso, en el ejemplo, se implementó mediante un vertex y un fragment shader. En el
 							vertex Shader, de forma similar al vertex shader de iluminación Phong, se usan buffers para
 							manejar los datos de entrada y de salida haciendo uso de un UBO(uniform buffer object) para
-							guardar matriz de pryección, de luz y del objeto en si; se usaron layouts para guardar color,
+							guardar matriz de pryección, de luz y del objeto en si; se usaron layouts para guardar
+							color,
 							pocisión, vector normal, color y las salidas del vector normal, vector de vista, vector de
 							color y vector de luz como tal.
 						</p>
 						<p>
-							Se calculan el vector normal de salida dependiendo de la matriz del objeto como tal y el vector
+							Se calculan el vector normal de salida dependiendo de la matriz del objeto como tal y el
+							vector
 							normal de entrada, la pocisión de la luz para luego calcular el vector de luz de salida y el
-							vector de vista (respectivo a la perspectiva de la que se ve) se calcula como el vector en la
-							dirección opuesta de la multiplicación de la matriz del objeto con la pocisión de entrada. El
+							vector de vista (respectivo a la perspectiva de la que se ve) se calcula como el vector en
+							la
+							dirección opuesta de la multiplicación de la matriz del objeto con la pocisión de entrada.
+							El
 							color de salida se toma como igual al de entrada.
 						</p>
 						<img src="phong_vs_toon.PNG" width=700>
@@ -204,19 +240,24 @@
 							perspectiva y el vector de luz, la salida en este caso será el color del fragmento como tal.
 						</p>
 						<p>
-							Se desatura el color y se calcula la iluminación ambiental que se tomará como 1, se normalizan
+							Se desatura el color y se calcula la iluminación ambiental que se tomará como 1, se
+							normalizan
 							los vectores de entrada para que sean unitarios mientras que se toma al vector de reflección
 							como una interpolación entre vector de dirección opuesta al de luz y el vector normal.
-							Inicialmente la iluminación difusa será el punto entre el vector normal y de luz, la iluminación
+							Inicialmente la iluminación difusa será el punto entre el vector normal y de luz, la
+							iluminación
 							especular será la potencia entre el punto del vector reflexión y el vector de la perspectiva
 							elevado a la 16 y multiplicado por 0.75, se hace para dar un efecto más contrastante a
 							comparación de la iluminación phong. El color de salida por ahora será la suma de estas 3
 							iluminaciones dándole un peso mayor a la difusa.
 						</p>
 						<p>
-							Finalmente se calcula un valor de intensidad que será el punto entre el vector normal y de luz.
-							Dependiendo de esta intensidad se va a multiplicar el sombreado en el color de salida mapeando
-							valores entre 0.75 y 0.25 dando como resultado que el sombreado tenga ciertos contrastes a manera
+							Finalmente se calcula un valor de intensidad que será el punto entre el vector normal y de
+							luz.
+							Dependiendo de esta intensidad se va a multiplicar el sombreado en el color de salida
+							mapeando
+							valores entre 0.75 y 0.25 dando como resultado que el sombreado tenga ciertos contrastes a
+							manera
 							de capas cuando el objeto en cuestión sea afectado por la luz.
 						</p>
 						<br />
@@ -224,7 +265,25 @@
 							<h2>Conclusiones</h2>
 						</header>
 						<p>
-							ASD
+						<ol>
+							<li>Vulkan realmente da una flexibilidad no solo por su modelo multiplataforma, con
+								funcionamiento en multiples sistemas, sino que también lo hace por la gama de
+								funcionalidades que ofrece a la hora de desarrollar programas sobre la misma.</li>
+							<br />
+							<li>Es evidente el uso de la GPU por medio de esta API, dejando como resultado,
+								menor perdida de procesamiento que se generaba por los cuellos de botella. Algo que
+								tiene gran relevancia, debido a que en el campo de la computación visual, y sobretodo en
+								la aplicación de diferentes modelos de iluminación, se buscan tecnicas eficientes para
+								la aplicación de estos modelos.</li>
+							<br />
+							<li>Así como se van generando nuevas técnicas que soportan el alto costo computacional
+								generado por la plicación de diferentes modelos de iluminación, vemos que también es de
+								suma importancia el generar nuevas tecnologías que soporten este desarrollo.</li>
+							<br />
+							<li>La curva de aprendizaje de esta API o herramienta no puede ser tan ligera, sin embargo,
+								cuando se tiene un alto conocimiento sobre la misma se pueden desarrollar programas con
+								una alta portabilidad, escalabilidad y sobretodo eficiencia.</li>
+						</ol>
 						</p>
 					</section>
 				</div>
@@ -259,4 +318,5 @@
 	</div>
 	<!-- /Footer -->
 </body>
+
 </html>
