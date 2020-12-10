@@ -124,18 +124,47 @@
 						<header>
 							<h2>Iluminación Toon</h2>
 						</header>
-						<br />
-						<header>
-							<h2>Texture Mapping</h2>
-						</header>
-						<br />
-						<header>
-							<h2>Noise Generated Texture</h2>
-						</header>
-						<br />
-						<header>
-							<h2>Bloom</h2>
-						</header>
+						<p>
+							Es un estilo de iluminación crado para parecerse al estilo de animación Ánime combinando
+							ilumiación difusa y especular para generar un efecto de sombreado por capas contrastantes.
+						</p>
+						<p>
+							En este caso, en el ejemplo, se implementó mediante un vertex y un fragment shader. En el
+							vertex Shader, de forma similar al vertex shader de iluminación Phong, se usan buffers para
+							manejar los datos de entrada y de salida haciendo uso de un UBO(uniform buffer object) para
+							guardar matriz de pryección, de luz y del objeto en si; se usaron layouts para guardar color,
+							pocisión, vector normal, color y las salidas del vector normal, vector de vista, vector de
+							color y vector de luz como tal.
+						</p>
+						<p>
+							Se calculan el vector normal de salida dependiendo de la matriz del objeto como tal y el vector
+							normal de entrada, la pocisión de la luz para luego calcular el vector de luz de salida y el
+							vector de vista (respectivo a la perspectiva de la que se ve) se calcula como el vector en la
+							dirección opuesta de la multiplicación de la matriz del objeto con la pocisión de entrada. El
+							color de salida se toma como igual al de entrada.
+						</p>
+						<img src="phong_vs_toon.PNG" width=700>
+						<p>En la imagen se ve ilumiación phong a la izquierda y toon a la derecha.</p>
+						<p>
+							En el fragment shader se reciben, mediante layouts, el vector normal, de luz, de vista o
+							perspectiva y el vector de luz, la salida en este caso será el color del fragmento como tal.
+						</p>
+						<p>
+							Se desatura el color y se calcula la iluminación ambiental que se tomará como 1, se normalizan
+							los vectores de entrada para que sean unitarios mientras que se toma al vector de reflección
+							como una interpolación entre vector de dirección opuesta al de luz y el vector normal.
+							Inicialmente la iluminación difusa será el punto entre el vector normal y de luz, la iluminación
+							especular será la potencia entre el punto del vector reflexión y el vector de la perspectiva
+							elevado a la 16 y multiplicado por 0.75, se hace para dar un efecto más contrastante a
+							comparación de la iluminación phong. El color de salida por ahora será la suma de estas 3
+							iluminaciones dándole un peso mayor a la difusa.
+						</p>
+						<p>
+							Finalmente se calcula un valor de intensidad que será el punto entre el vector normal y de luz.
+							Dependiendo de esta intensidad se va a multiplicar el sombreado en el color de salida mapeando
+							valores entre 0.75 y 0.25 dando como resultado que el sombreado tenga ciertos contrastes a manera
+							de capas cuando el objeto en cuestión sea afectado por la luz.
+						</p>
 						<br />
 						<span style="font-weight: bold;">Bibliografía</span>
 						<ul type=”A”>
