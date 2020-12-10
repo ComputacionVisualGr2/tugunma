@@ -38,7 +38,7 @@
 
 			<!-- Logo -->
 			<div id="logo">
-				<h1><a href="#">Vulkam lighting</a></h1>
+				<h1><a href="#">Vulkan lighting</a></h1>
 				<span class="tag">Proyecto</span>
 			</div>
 		</div>
@@ -63,6 +63,8 @@
 									<li><a href="https://www.amd.com/es/technologies/vulkant" target="_blank">Vulkan | AMD</a></li>
 									<li><a href="https://community.amd.com/t5/blogs/radeon-gpus-are-ready-for-the-vulkan-graphics-api/ba-p/415008" target="_blank">Vulkan applications | AMD</a></li>
 									<li><a href="https://www.khronos.org/vulkan/" target="_blank">Vulkan | Página oficial</a></li>
+									<li><a href="https://learnopengl.com/Advanced-Lighting/Shadows/Shadow-Mapping" target="_blank">LearnOpenGL | Shadow Mapping</a></li>
+									<li><a href="http://www.opengl-tutorial.org/es/intermediate-tutorials/tutorial-16-shadow-mapping/" target="_blank">OpenGL-Tutorial | Shadow Mapping</a></li>
 								</ul>
 							</section>
 						</div>
@@ -111,7 +113,48 @@
 						<header>
 							<h2>Shadow Mapping</h2>
 						</header>
-						<br />
+						<p>
+							Las sombras son el resultado de la ausenncia de la luz debido a la oclución. Cuando los
+							rayos de luz de la fuente De iluminación no tocan un objeto X porque éste está ocluido por 
+							otro objeto Y, el objeto X está en las sombras. Pero, ¿cómo nos acercamos a esto en computaciónvisual?
+							En el intento por responder está pregunta se encuentra el Shadow Mapping.
+						</p>
+						<p>
+							Shadow Mapping es una técnica de iluminación que trabaja con la distancia existente entre la fuente de luz
+							y los objetos que irradia. La idea detras de Shadow Mapping es simple: se renderiza la escena desde el punto
+							de vista de la luz; todo lo que se ve desde esta perspectica está iluminado y aquello que no se ve, no lo está
+							(está en las sombras). Para esto, se compara el punto donde el rayo de luz primero toca un objeto (punto más 
+							cercano a la fuente de luz) con otros puntos en este rayo. Si luego de la comparación la posición del rayo en el
+							punto de estudio está más alejado que la posición del rayo en el punto más cercano, el punto de estudio debe 
+							estar en las sombras. Pero iterar y recorrer todos los posibles puntos con los muchos rayos de luz es ineficiente.
+							Es acá donde entre en juego el Shadow Map. 
+						</p>
+						<img src="shadow.JPG" width="700"/>
+						<p>
+							Las lineas azules representan los fragmentos donde la luz se puede ver. Las lineas negras, aquellos que están en las
+							sombras.
+						</p>
+						<p>
+							El Shadow Map (también llamado Depth Map), es una textura que guarda todos los valores de profundidad (que van desde 0 hasta 1, siendo 1 el mas lejano),
+							obtenidos al renderizar la escena desde el punto de vista de la luz. Con esto, se puede calcular si un fracmento está 
+							en las sombras o no.
+						</p>
+						<img src="shadowmap.JPG" width="700"/>
+						<p>Ilustración del Shadow Map, y cómo se diferencian las sombras</p>
+						<p>
+							Se puede decir, entonces, que el Shadow Mapping consiste de dos pasos:
+							<ol>
+								<li>Primero, se renderiza el shadow map. Debido a que este solo contiene datos de profundidad de baja precisión 
+									(dejando a un lado el color), el tiempo de renderizado es 2 veces mayor que el de un renderizado normal.</li>
+								<li>Luego, se renderiza la escena normalmente y se usa el shadow map generado para calcular los fragmentos que están en
+									 las sombras.</li>
+							</ol>
+						</p><br>
+						<h3>Ejemplo</h3>
+						<img src="ejemploShadow.jpeg" width="700"/>
+						<br>
+						
+						</br>
 						<header>
 							<h2>Iluminación Phong</h2>
 						</header>
